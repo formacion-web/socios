@@ -45,6 +45,6 @@ export class AuthService {
     }
     
     // Return an observable with a user-facing error message.
-    return throwError(`{${error.status}:${error.error}}`);
+    return throwError(`${error.error}`);
   }
 }

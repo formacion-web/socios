@@ -6,11 +6,14 @@ import { AuthService } from 'src/app/shared/services/auth.service';
 
 @Component({
   selector: 'acme-register',
-  template: `<reg-form [formGroup]='formGroup'
+  template: `<reg-form 
+  [formGroup]='formGroup'
+  [error]=error
   (submitEvt)=registerUser($event)></reg-form>`
 })
 export class RegisterComponent implements OnInit {
 
+  error!:string;
   user!:User;
   formGroup!:FormGroup;
   constructor(private fb:FormBuilder,
@@ -28,6 +31,7 @@ export class RegisterComponent implements OnInit {
       this.router.navigate(['/socio'])},error => {
         this.formGroup.controls['email'].setErrors({'incorrect': true})
         console.log('component',error)
+        this.error = error;
       })
     //todo: conectar con el Service de authentication
   }
@@ -36,7 +40,11 @@ export class RegisterComponent implements OnInit {
     this.formGroup = this.fb.group(this.user);
     // console.log(this.user)
     Object.keys(this.formGroup.controls).map(ctrl =>{
-      this.formGroup.controls[ctrl].setValidators(Validators.required)
+
+      if(ctrl==='email'){
+        this.formGroup.controls[ctrl].setValidators([Validators.required,Validators.email])
+      } else{
+      this.formGroup.controls[ctrl].setValidators(Validators.required)}
       //  console.log(this.formGroup);
     })
   }

@@ -16,7 +16,7 @@
                 <p>
                     <mat-form-field>
                         <input type="text" matInput placeholder="email" formControlName='email'>
-                        <mat-error *ngIf="formGroup.controls.email.errors">email already exists</mat-error>
+                        <mat-error *ngIf="formGroup.controls.email.errors">{{error}}</mat-error>
                     </mat-form-field>
                 </p>
                 <p>

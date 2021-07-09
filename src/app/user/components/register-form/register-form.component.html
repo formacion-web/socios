@@ -1,1 +1,42 @@
-<p>register-form works!</p>
+<div class="register-container">
+    <mat-card>
+
+        <mat-card-content>
+            <form [formGroup]='formGroup' (ngSubmit)='submit()'>
+                <p>
+                    <mat-form-field>
+                        <input type="text" matInput placeholder="name" formControlName='name'>
+                    </mat-form-field>
+                </p>
+                <p>
+                    <mat-form-field>
+                        <input type="text" matInput placeholder="surname" formControlName='surname'>
+                    </mat-form-field>
+                </p>
+                <p>
+                    <mat-form-field>
+                        <input type="text" matInput placeholder="email" formControlName='email'>
+                    </mat-form-field>
+                </p>
+                <p>
+                    <mat-form-field>
+                        <input type="text" matInput placeholder="password" formControlName='password'>
+                    </mat-form-field>
+                </p>
+                <p>
+                    <mat-form-field>
+                        <input type="text" matInput placeholder="confirmPassword" formControlName='password'>
+                    </mat-form-field>
+                </p>
+                <div class="button">
+                    <button type="submit" mat-button>Register</button>
+                </div>
+                <p>
+                    <mat-hint>
+                        Already registered. Click <span><a routerLink="/login">here</a></span>
+                    </mat-hint>
+                </p>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>

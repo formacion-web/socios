@@ -1,1 +1,27 @@
-<p>login-form works!</p>
+<div class="login-container">
+    <mat-card>
+
+        <mat-card-content>
+            <form [formGroup]='formGroup' (ngSubmit)='submit()'>
+                <p>
+                    <mat-form-field>
+                        <input type="text" matInput placeholder="email" formControlName='email'>
+                    </mat-form-field>
+                </p>
+                <p>
+                    <mat-form-field>
+                        <input type="text" matInput placeholder="password" formControlName='password'>
+                    </mat-form-field>
+                </p>
+                <div class="button">
+                    <button type="submit" mat-button>Login</button>
+                </div>
+                <p>
+                    <mat-hint>
+                        Not yet registered. Click <span><a routerLink="/register">here</a></span>
+                    </mat-hint>
+                </p>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>

@@ -1,0 +1,22 @@
+{
+  "socios": [
+    {
+      "id": 1,
+      "name": "John",
+      "surname": "Smith",
+      "email": "john@mail.com",
+      "age": 25,
+      "category": "Premium",
+      "userId": 1
+    }
+  ],
+  "users": [
+    {
+      "email": "john@mail.com",
+      "password": "$2a$10$qV1cWLADvCxACByEzqkQUOyCjEAEO9jJ5W5EeMek9/1RgW0nKzXx6",
+      "name": "john",
+      "surname": "smith",
+      "id": 1
+    }
+  ]
+}

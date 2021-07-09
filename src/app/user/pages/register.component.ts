@@ -22,10 +22,13 @@ export class RegisterComponent implements OnInit {
 
   registerUser(user:User){
     this.authService.registerUser$(user).subscribe(data => 
-      {console.log(data)
+      {
+     console.log('user registered',data)
       this.authService.setToken(data.accessToken);
-      this.router.navigate(['/socio'])});
-    console.log(user);
+      this.router.navigate(['/socio'])},error => {
+        this.formGroup.controls['email'].setErrors({'incorrect': true})
+        console.log('component',error)
+      })
     //todo: conectar con el Service de authentication
   }
 

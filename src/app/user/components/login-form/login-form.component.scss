@@ -1,4 +1,5 @@
 :host{
+<<<<<<< HEAD
   display: flex;
   justify-content: center;
   align-items: center;
@@ -35,3 +36,32 @@ mat-card-content {
   display: flex;
   justify-content: flex-end;
 }
+=======
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-container{
+  
+    display: flex;
+    justify-content: center;
+    margin:100px 0px;
+}
+
+.mat-form-field{
+    width:100%;
+    min-width: 300px;
+}
+
+mat-card-content{
+    display: flex;
+    justify-content: center;
+}
+
+.button{
+    display: flex;
+    justify-content: flex-end;
+}
+>>>>>>> 51b0f101bf1b6360bbdbcfab753377949a18bc7d

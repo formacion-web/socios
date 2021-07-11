@@ -1,0 +1,22 @@
+POST http://localhost:3000/register
+Content-Type: application/json
+
+{
+  "email":"john@mail.com",
+  "password":"1234"
+}
+
+############
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+  "email":"john@mail.com",
+  "password":"1234"
+}
+
+#######
+GET http://localhost:3000/600/socios/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG5AbWFpbC5jb20iLCJpYXQiOjE2MjU3NTc5NzQsImV4cCI6MTYyNTc2MTU3NCwic3ViIjoiMSJ9.KBzLE2KXElJWlo-E6a-Cn_wTZc8WwH5wdOc-hNglRWU
+
+

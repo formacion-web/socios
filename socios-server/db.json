@@ -1,0 +1,19 @@
+{
+  "socios": [
+    {
+      "id": 1,
+      "name": "john",
+      "surname": "smith",
+      "email": "john@mail.com",
+      "category": "premium",
+      "userId":1
+    }
+  ],
+  "users": [
+    {
+      "email": "john@mail.com",
+      "password": "$2a$10$O7xliJ4wkYeig5Yig0dAHuO3jRfxd0ykiWcMDuruDCZVYTJVST0D6",
+      "id":1
+    }
+  ]
+}

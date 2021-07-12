@@ -8,10 +8,6 @@ import { LoginFormComponent } from './components/login-form/login-form.component
 import { ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from '../shared/material.module';
 import { RouterModule } from '@angular/router';
-<<<<<<< HEAD
-=======
-
->>>>>>> 51b0f101bf1b6360bbdbcfab753377949a18bc7d
 
 @NgModule({
   declarations: [

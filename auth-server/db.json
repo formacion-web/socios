@@ -2,6 +2,7 @@
   "socios": [
     {
       "id": 1,
+      "numeroSocio":123234,
       "name": "John",
       "surname": "Smith",
       "email": "john@mail.com",

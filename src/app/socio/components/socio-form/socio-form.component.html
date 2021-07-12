@@ -1,3 +1,39 @@
-<!-- <acme-header></acme-header> -->
+<div class="socio-container">
+    <mat-card>
 
-<p>socio-form works!</p>
+        <mat-card-content>
+            <form [formGroup]='formGroup' >
+                <p>
+                    <mat-form-field>
+                        <input type="text"  matInput placeholder="numeroSocio" formControlName='numeroSocio'>
+                    </mat-form-field>
+                </p>
+                <p>
+                    <mat-form-field>
+                        <input type="text" matInput placeholder="name" formControlName='name'>
+                    </mat-form-field>
+                </p>
+                <p>
+                    <mat-form-field>
+                        <input type="text" matInput placeholder="surname" formControlName='surname'>
+                    </mat-form-field>
+                </p>
+                <p>
+                    <mat-form-field>
+                        <input type="text" matInput placeholder="email" formControlName='email'>
+
+                    </mat-form-field>
+                </p>
+                <p>
+                    <mat-form-field>
+                        <input type="text" matInput placeholder="category" formControlName='category'>
+                    </mat-form-field>
+                </p>
+                <div class="button">
+                    <button type="button" mat-button (click)='submit()'>Edit</button>
+                </div>
+
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>

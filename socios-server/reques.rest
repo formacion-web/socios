@@ -16,7 +16,7 @@ Content-Type: application/json
 }
 
 #######
-GET http://localhost:3000/600/socios/1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG5AbWFpbC5jb20iLCJpYXQiOjE2MjU3NTc5NzQsImV4cCI6MTYyNTc2MTU3NCwic3ViIjoiMSJ9.KBzLE2KXElJWlo-E6a-Cn_wTZc8WwH5wdOc-hNglRWU
+GET http://localhost:3000/600/socios
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG5AbWFpbC5jb20iLCJpYXQiOjE2MjYwODM0NDIsImV4cCI6MTYyNjA4NzA0Miwic3ViIjoiMSJ9.Nw5NHchA-2JBy5hcK_v6R6512cwx-xHtfqWC14OVHzY
 
 

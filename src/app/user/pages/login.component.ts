@@ -13,7 +13,7 @@ export class LoginComponent implements OnInit {
 
   user!:User;
   formGroup!:FormGroup;
-  constructor(private fb:FormBuilder) { 
+  constructor(private fb:FormBuilder) {
     this.user = new User();
 
   }

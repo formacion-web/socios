@@ -8,9 +8,10 @@ import { FormGroup } from '@angular/forms';
   styleUrls: ['./login-form.component.scss']
 })
 export class LoginFormComponent implements OnInit {
+@Input() formGroup!: FormGroup;
+@Input() error!:string;
 
-  @Input() formGroup!:FormGroup;
-  @Output() submitEvt = new EventEmitter();
+@Output() submitEvt = new EventEmitter();
 
   constructor() { }
 
@@ -19,5 +20,5 @@ export class LoginFormComponent implements OnInit {
   }
   ngOnInit(): void {
   }
-
+  
 }

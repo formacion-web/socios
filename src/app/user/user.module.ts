@@ -9,7 +9,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from '../shared/material.module';
 import { RouterModule } from '@angular/router';
 
-
 @NgModule({
   declarations: [
     LoginComponent,

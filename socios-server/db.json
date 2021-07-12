@@ -1,0 +1,27 @@
+{
+  "socios": [
+    {
+      "id": 1,
+      "name": "john",
+      "surname": "smith",
+      "email": "john@mail.com",
+      "category": "premium",
+      "userId": 1
+    }
+  ],
+  "users": [
+    {
+      "email": "john@mail.com",
+      "password": "$2a$10$O7xliJ4wkYeig5Yig0dAHuO3jRfxd0ykiWcMDuruDCZVYTJVST0D6",
+      "id": 1
+    },
+    {
+      "email": "s@s",
+      "password": "$2a$10$95yuOKkQ/H1oEqUhxj4MjeZdwyQg6WsV.Afgx5fGqEqmfW7KsNvZu",
+      "name": "sara",
+      "surname": "sun",
+      "confirmPassword": "1234",
+      "id": 2
+    }
+  ]
+}

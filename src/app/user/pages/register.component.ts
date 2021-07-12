@@ -43,7 +43,7 @@ export class RegisterComponent implements OnInit {
   passwordValidator(): ValidatorFn {
 
     return (ctrl: AbstractControl): ValidationErrors | null =>
-       this.formGroup.get('password')?.value !== ctrl?.value?{mismatch: true}:null;
+       this.formGroup?.get('password')?.value !== ctrl?.value?{mismatch: true}:null;
 }
 
 
@@ -57,7 +57,14 @@ export class RegisterComponent implements OnInit {
       if(ctrl==='confirmPassword')validators.push(this.passwordValidator().bind(this))
 
       this.formGroup.controls[ctrl].setValidators(validators)
-
+ //Versión intuitiva
+    // this.formGroup = this.fb.group({
+    //   name:['',Validators.required],
+    //   surname:['',Validators.required],
+    //   email:['',[Validators.required,Validators.email]],
+    //   password:['', Validators.required],
+    //   confirmPassword:['',[Validators.required,this.passwordValidator().bind(this)]]
+    // });
     })
    
   }

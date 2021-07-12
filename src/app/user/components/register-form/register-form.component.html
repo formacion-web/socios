@@ -26,7 +26,8 @@
                 </p>
                 <p>
                     <mat-form-field>
-                        <input type="text" matInput placeholder="confirmPassword" formControlName='password'>
+                        <input type="text" matInput placeholder="confirmPassword" formControlName='confirmPassword'>
+                        <mat-error *ngIf="formGroup.controls['confirmPassword'].errors?.mismatch==true">password mismatched</mat-error>
                     </mat-form-field>
                 </p>
                 <div class="button">

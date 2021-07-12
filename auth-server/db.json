@@ -17,6 +17,14 @@
       "name": "john",
       "surname": "smith",
       "id": 1
+    },
+    {
+      "email": "a@a",
+      "password": "$2a$10$gHwwSlpHlZ6NwFnl/EuaH.RVIvLzMVA7axGmmLM0zepi6bezS3FlK",
+      "name": "sara",
+      "surname": "sun",
+      "confirmPassword": "1234",
+      "id": 2
     }
   ]
 }

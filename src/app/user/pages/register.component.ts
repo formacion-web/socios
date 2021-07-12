@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, ValidatorFn, AbstractControl, ValidationErrors } from '@angular/forms';
 import { Router } from '@angular/router';
 import { User } from 'src/app/shared/model/user';
 import { AuthService } from 'src/app/shared/services/auth.service';
@@ -36,17 +36,29 @@ export class RegisterComponent implements OnInit {
     //todo: conectar con el Service de authentication
   }
 
+  passwordValidator(): ValidatorFn{
+    return (ctrl: AbstractControl): ValidationErrors | null =>
+      this.formGroup.get('password')?.value !==ctrl?.value?{mismatch:true}:null
+
+  }
   ngOnInit(): void {
+    //versión no tan intuitiva
     this.formGroup = this.fb.group(this.user);
     // console.log(this.user)
     Object.keys(this.formGroup.controls).map(ctrl =>{
-
-      if(ctrl==='email'){
-        this.formGroup.controls[ctrl].setValidators([Validators.required,Validators.email])
-      } else{
-      this.formGroup.controls[ctrl].setValidators(Validators.required)}
-      //  console.log(this.formGroup);
+      const validators = [Validators.required];
+      if(ctrl==='email') validators.push(Validators.email);
+      if (ctrl==='confirmPassword') validators.push(this.passwordValidator().bind(this))
+      this.formGroup.controls[ctrl].setValidators(validators)
     })
+    //Versión intuitiva
+    // this.formGroup = this.fb.group({
+    //   name:['',Validators.required],
+    //   surname:['',Validators.required],
+    //   email:['',Validators.required,Validators.email],
+    //   password:['', Validators.required],
+    //   confirmPassword:['',Validators.required,this.passwordValidator().bind(this)]
+    // });
   }
 
 }

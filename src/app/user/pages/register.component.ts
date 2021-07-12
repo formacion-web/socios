@@ -1,9 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-<<<<<<< HEAD
-import { FormGroup, FormBuilder, Validators, ValidatorFn, AbstractControl, ValidationErrors } from '@angular/forms';
-=======
 import { FormGroup, FormBuilder, Validators, AbstractControl, ValidatorFn, ValidationErrors, FormControl } from '@angular/forms';
->>>>>>> aa4c7b3f92408406905134170aae9c20940670b9
 import { Router } from '@angular/router';
 import { User } from 'src/app/shared/model/user';
 import { AuthService } from 'src/app/shared/services/auth.service';

@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "socios-web": {
+      "hosting": {
+        "socios": [
+          "socios-web"
+        ]
+      }
+    }
+  }
+}

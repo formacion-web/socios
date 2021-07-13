@@ -5,7 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { SocioComponent } from './pages/socio.component';
 
 const routes: Routes = [
-  {path:'',component:SocioComponent}
+  {path:':id',component:SocioComponent}
 ];
 
 @NgModule({

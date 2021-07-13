@@ -1,8 +1,8 @@
 export class User {
-    id?:number;
+    id?:string;
     name?:string='';
     surname?:string='';
     email:string='';
-    password?:string='';
+    password:string='';
     confirmPassword?:string='';
 }

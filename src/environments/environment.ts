@@ -4,7 +4,15 @@
 
 export const environment = {
   production: false,
-  api_url:'http://localhost:3000/'
+  api_url:'http://localhost:3000/',
+  firebaseConfig : {
+    apiKey: "AIzaSyCtPNmmVWvhGoVSPaJ6rjIDl8SvlPRoYz8",
+    authDomain: "socios-web.firebaseapp.com",
+    projectId: "socios-web",
+    storageBucket: "socios-web.appspot.com",
+    messagingSenderId: "200218642099",
+    appId: "1:200218642099:web:6be918cbf612ec04c8d2c6"
+  }
 };
 
 /*

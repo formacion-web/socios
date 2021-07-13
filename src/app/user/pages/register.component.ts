@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, Validators, AbstractControl, ValidatorFn, Valid
 import { Router } from '@angular/router';
 import { User } from 'src/app/shared/model/user';
 import { AuthService } from 'src/app/shared/services/auth.service';
+import { FireAuthService } from 'src/app/shared/services/fire-auth.service';
 
 @Component({
   selector: 'acme-register',
@@ -17,23 +18,28 @@ export class RegisterComponent implements OnInit {
   user!:User;
   formGroup!:FormGroup;
   constructor(private fb:FormBuilder,
-              private authService: AuthService,
+              private fireAuthService: FireAuthService,
               private router: Router) {
     this.user = new User();
 
   }
 
-  registerUser(user:User){
-    this.authService.registerUser$(user).subscribe(data =>
-      {
-     console.log('user registered',data)
-      this.authService.setToken(data.accessToken);
-      this.router.navigate(['/socio'])},error => {
-        this.formGroup.controls['email'].setErrors({'incorrect': true})
-        console.log('component',error)
-        this.error = error;
-      })
-    //todo: conectar con el Service de authentication
+  // registerUser(user:User){
+  //   this.authService.registerUser$(user).subscribe(data =>
+  //     {
+  //    console.log('user registered',data)
+  //     this.authService.setToken(data.accessToken);
+  //     this.router.navigate(['/socio'])},error => {
+  //       this.formGroup.controls['email'].setErrors({'incorrect': true})
+  //       console.log('component',error)
+  //       this.error = error;
+  //     })
+  //   //todo: conectar con el Service de authentication
+  // }
+
+  async registerUser(user:User){
+    await this.fireAuthService.register(user);
+    this.router.navigate(['/login']);
   }
 
   passwordValidator(): ValidatorFn {

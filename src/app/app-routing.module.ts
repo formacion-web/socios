@@ -11,8 +11,9 @@ const routes: Routes = [
   {path:'register', component:RegisterComponent},
   {path:'socio', 
       loadChildren: () => import('./socio/socio.module').then(m => m.SociosModule),
-      canLoad:[AuthGuard],
-      resolve: {socio: SocioResolverService}}
+      // canLoad:[AuthGuard],
+      // resolve: {socio: SocioResolverService}
+    }
 ];
 
 @NgModule({

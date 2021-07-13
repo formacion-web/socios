@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, Resolve, RouterStateSnapshot } from '@angular/router';
-import { Observable } from 'rxjs';
-import { take } from 'rxjs/operators';
+import { Observable, of, throwError } from 'rxjs';
+import { catchError, take } from 'rxjs/operators';
 import { Socio } from '../model/socio';
 import { SocioService } from './socio.service';
 
@@ -12,9 +12,12 @@ export class SocioResolverService implements Resolve<Socio> {
 
   constructor(private socioService: SocioService) { }
 
-  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Socio> | Observable<never> {
+  resolve(){
 
     return this.socioService.getSocio$().pipe(
-      take(1))
+      take(1),
+      catchError((error)=>{
+        console.log(error)
+        return of(error.error)}))
 
   }}

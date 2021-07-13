@@ -1,6 +1,6 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { throwError } from 'rxjs';
+import { of, throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +9,7 @@ export class ErrorService {
 
   constructor() { }
 
-  handleErrors(error: HttpErrorResponse){
+  handleErrors(error: any){
 
     if (error.status === 0) {
       // A client-side or network error occurred. Handle it accordingly.
@@ -23,6 +23,7 @@ export class ErrorService {
     }
     
     // Return an observable with a user-facing error message.
-    return throwError(`${error.error}`);
+    return of(error.error);
+    // return throwError(`${error.error}`);
   }
 }

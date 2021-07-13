@@ -34,15 +34,20 @@ export class SocioComponent implements OnInit {
     // this.socioService.getSocio$().subscribe(data => {
       this.route.data.subscribe(data => {
       console.log(data);
+      if(data.socio!=='jwt expired'){
       this.formGroup = this.fb.group({
         name: data.socio[0].name,
         surname: data.socio[0].surname,
         numeroSocio: data.socio[0].numeroSocio,
         email: data.socio[0].email,
-        category: data.socio[0].category})},
+        category: data.socio[0].category})}
+      else{
+       
+       this.router.navigate(['/login']);
+      }},
       error => {
         if(error.status =='401')
-        this.formGroup = this.fb.group(this.socio);
+       
         this.error = error;
         console.log(this.error);
       })
